@@ -1,5 +1,5 @@
-/data
+/spark-components/data
 /.ipynb_checkpoints
 /.idea
-/checkpoint
+/spark-components/checkpoint
 /kafka-components/kafka-producer/.idea
