@@ -1,4 +1,4 @@
-from kafka import KafkaAdminClient, KafkaProducer, KafkaConsumer
+from kafka import KafkaAdminClient, KafkaProducer
 from kafka.admin import NewTopic
 import generator
 from utils import helper
@@ -24,7 +24,7 @@ class Producer:
                                  retries=3)
         while True:
             key = 0
-            customer_pre_check = generator.CustomerPreCheck()
+            customer_pre_check = generator.Generator()
             data = customer_pre_check.generate_data()
             producer.send(self.topic, value=data, key=str(key))
             key += 1
@@ -45,7 +45,7 @@ def main():
             admin.create_topics([topic])
             break
         except Exception as e:
-            # print(e)
+            print(e)
             print("Oops! Perhaps the topic has already been created")
             admin.delete_topics([TOPIC])
 

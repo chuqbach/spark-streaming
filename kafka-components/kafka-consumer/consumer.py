@@ -35,6 +35,7 @@ class Consumer:
 
         # consumer.close()
 
+
 def main():
     config = helper.read_config("config/kafka.cfg")
     BOOTSTRAP_SERVER = config["DEV"]["BOOTSTRAP_SERVER"]
